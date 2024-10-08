@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixabay Clone - Image Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js" defer></script> <!-- Added defer to ensure script loads after the DOM -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- Header Background Image Section with Header -->
+    <section class="relative bg-cover bg-center h-[70vh] text-white"
+        style="background-image: url('https://cdn.pixabay.com/index/2024/07/04/08-47-30-452_1440x550.jpg');">
+        <!-- Header Section Inside Background -->
+        <header class="absolute top-0 left-0 w-full flex items-center justify-between p-5 z-10">
+            <div class="logo">
+                <h1 class="text-2xl">pixabay</h1>
+            </div>
+            <div class="nav-links flex items-center space-x-4">
+                <div class="relative">
+                    <a href="#" id="explore-link">Explore</a>
+                    <div class="hidden absolute bg-gray-800 min-w-[180px] z-10 rounded mt-1" id="dropdown-menu">
+                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Popular Images</a>
+                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Categories</a>
+                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">New Uploads</a>
+                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Editors' Picks</a>
+                    </div>
+                </div>
+                <a href="#">Log in</a>
+                <a href="#" class="border border-gray-300 bg-transparent text-white py-1 px-4 rounded transition hover:bg-gray-700">Join</a>
+                <a href="#" class="bg-green-500 text-white py-2 px-5 rounded transition hover:bg-green-600">Upload</a>
+            </div>
+        </header>
+
+        <!-- Background Image Text and Search Bar -->
+        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-full text-center">
+            <h1 class="text-4xl font-bold"><strong>Free illustrations for download & inspiration</strong></h1>
+            <h2 class="text-lg">Over 820,000+ beautiful free illustrations shared by our talented community.</h2>
+
+            <div class="w-full max-w-[1000px] mx-auto mt-5 flex items-center bg-white rounded-full shadow-lg overflow-hidden p-2">
+                <!-- SVG Icon -->
+                <svg class="w-5 h-5 fill-gray-500 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path
+                        d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                </svg>
+                <!-- Search Input -->
+                <input type="search" name="search" placeholder="Search for illustration"
+                    class="w-4/5 px-3 py-2 text-black rounded-full border-none outline-none" required>
+                <div class="flex items-center">
+                    <select name="category" class="bg-transparent font-bold text-black cursor-pointer px-2 py-2">
+                        <option value="illustrations">Illustrations</option>
+                        <option value="all">All Images</option>
+                        <option value="photos">Photos</option>
+                        <option value="vectors">Vectors</option>
+                        <option value="videos">Videos</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="flex justify-center items-center gap-5 p-5 bg-white shadow-lg">
+        <!-- Menu Items with SVG Icon and Text -->
+        <a href="/home/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <i class="fa-solid fa-house"></i>
+            <span><a href="index.html">Home</a></span>
+        </a>
+
+        <a href="/photos/" class="flex items-center p-3 rounded hover:bg-gray-100 transition active">
+            <i class="fa-solid fa-camera"></i>
+            <span><a href="photos.html">Photos</a></span>
+        </a>
+        <a href="/illustrations/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"  class="w-5 h-5 fill-green-500 mr-2">
+                <path
+                    d="M339.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L568.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S517.7-4.4 499.1 9.6L262.4 187.2c-24 18-38.2 46.1-38.4 76.1L339.3 367.1zm-19.6 25.4l-116-104.4C143.9 290.3 96 339.6 96 400c0 3.9 .2 7.8 .6 11.6C98.4 429.1 86.4 448 68.8 448L64 448c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z" />
+            </svg>
+            <span>Illustrations</span>
+        </a>
+        <a href="/vectors/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <i class="fas fa-vector-square"></i>
+            <span><a href="Vectors.html">Vectors</a></span>
+        </a>
+        <a href="/videos/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <i class="fas fa-video"></i>
+            <span><a href="video.html">Vectors</a></span>
+        </a>
+        <a href="/music/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <i class="fas fa-music"></i>
+            <span>Music</span>
+        </a>
+        <a href="/community/" class="flex items-center p-3 rounded hover:bg-gray-100 transition">
+            <i class="fas fa-users"></i>
+            <span>Community</span>
+        </a>
+    </div>
+</body>
+
+</html>

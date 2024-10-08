@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixabay Clone - Image Detail</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
+</head>
+
+<body class="bg-gray-200">
+
+    <!-- Header Background Video Section -->
+    <section class="relative h-[70vh] overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover z-0" autoplay loop muted>
+            <source src="https://pixabay.com/static/videos/hero3.mp4" type="video/mp4">
+        </video>
+        <header class="flex justify-between items-center absolute top-0 left-0 w-full p-4 text-white bg-black bg-opacity-50 z-10">
+            <div class="logo">
+                <h1 class="text-xl">pixabay</h1>
+            </div>
+            <div class="nav-links flex items-center space-x-4">
+                <div class="relative group">
+                    <a href="#" id="explore-link">Explore</a>
+                    <div class="absolute hidden group-hover:block bg-gray-800 text-gray-200 rounded-md mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Popular Images</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Categories</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">New Uploads</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Editors' Picks</a>
+                    </div>
+                </div>
+                <a href="#" class="hover:text-gray-300">Log in</a>
+                <a href="#" class="border border-gray-300 rounded-full px-4 py-1 hover:bg-gray-700 transition">Join</a>
+                <a href="#"
+                    class="bg-green-600 text-white rounded-full px-4 py-2 hover:bg-green-500 transition">Upload</a>
+            </div>
+        </header>
+
+        <!-- Background Image Text and Search Bar -->
+        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 text-white text-center z-10">
+            <h1 class="text-4xl"><strong>Stunning free vector art stock images</strong></h1>
+            <h2 class="text-lg">Over 5 million+ high quality stock images, videos, and music shared by our talented community.</h2>
+
+            <div class="max-w-2xl mx-auto mt-5 flex items-center bg-white rounded-full shadow-md overflow-hidden">
+                <form class="flex w-full items-center" action="https://www.shutterstock.com" method="get">
+                    <!-- SVG Icon -->
+                    <svg class="w-5 h-5 fill-gray-500 mx-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg>
+                    <!-- Search Input -->
+                    <input type="search" name="search" placeholder="Search for vectors"
+                        class="w-[85%] text-black py-2 px-4 border-none outline-none rounded-full" required>
+                    <div class="flex items-center px-2">
+                        <select name="category"
+                            class="border-none outline-none bg-transparent text-black font-bold cursor-pointer">
+                            <option value="vectors">Vectors</option>
+                            <option value="all">All Images</option>
+                            <option value="photos">Photos</option>
+                            <option value="illustrations">Illustrations</option>
+                            <option value="videos">Videos</option>
+                            <option value="music">Music</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <div class="flex justify-center items-center gap-5 p-5 bg-white shadow-lg">
+        <a href="/home/" class="flex items-center p-2 hover:bg-gray-100 rounded">
+            <i class="fa-solid fa-house"></i>
+            <span class="ml-2">Home</span>
+        </a>
+        <a href="/photos/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <i class="fas fa-camera menu-icon"></i>
+            <span>Photos</span>
+        </a>
+        <a href="/illustrations/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <i class="fas fa-paint-brush menu-icon"></i>
+            <span>Illustrations</span>
+        </a>
+        <a href="/vectors/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <i class="fas fa-vector-square menu-icon"></i>
+            <span>Vectors</span>
+        </a>
+        <a href="/videos/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512" class="w-5 h-5 fill-green-500 mr-2">
+                <path
+                    d="M0 128C0 92.7 28.7 64 64 64l256 0c35.3 0 64 28.7 64 64l0 256c0 35.3-28.7 64-64 64L64 448c-35.3 0-64-28.7-64-64L0 128zM559.1 99.8c10.4 5.6 16.9 16.4 16.9 28.2l0 256c0 11.8-6.5 22.6-16.9 28.2s-23 5-32.9-1.6l-96-64L416 337.1l0-17.1 0-128 0-17.1 14.2-9.5 96-64c9.8-6.5 22.4-7.2 32.9-1.6z" />
+            </svg>
+            <span>Videos</span>
+        </a>
+        <a href="/music/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <i class="fas fa-music menu-icon"></i>
+            <span>Music</span>
+        </a>
+        <a href="/community/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
+            <i class="fas fa-users menu-icon"></i>
+            <span>Community</span>
+        </a>
+    </div>
+</body>
+
+</html>
