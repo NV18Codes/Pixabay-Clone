@@ -6,58 +6,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pixabay Clone - Image Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="script.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="bg-gray-200">
-    <!-- Background Section with Half Height -->
-    <section class="relative h-[70vh] flex flex-col items-center justify-center text-white text-center overflow-hidden">
-        <!-- Background Image -->
-        <div class="absolute inset-0 bg-cover bg-center filter brightness-50" style="background-image: url('https://cdn.pixabay.com/index/2024/10/03/05-48-06-407_1440x550.jpg');"></div>
-        <header class="absolute top-0 left-0 w-full flex items-center justify-between p-5 z-10">
+
+    <section class="relative h-[70vh] overflow-hidden">
+        <video class="absolute top-0 left-0 w-full h-full object-cover brightness-50 z-0" autoplay loop muted>
+            <source src="https://cdn.pixabay.com/index/2023/09/13/clouds_-_33542_Original.mp4" type="video/mp4">
+        </video>
+        <header class="flex justify-between items-center absolute top-0 left-0 w-full p-4 text-white z-10">
             <div class="logo">
-                <h1 class="text-2xl">pixabay</h1>
+                <h1 class="text-xl">pixabay</h1>
             </div>
-            <div class="nav-links flex items-center space-x-4">
-                <div class="relative border border-gray-300 rounded-full px-4 py-1">
-                    <a href="#" id="explore-link ">Explore</a>
-                    <div class="hidden absolute bg-gray-800 min-w-[180px] z-10 rounded mt-1" id="dropdown-menu">
-                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Popular Images</a>
-                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Categories</a>
-                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">New Uploads</a>
-                        <a href="#" class="block text-gray-400 hover:bg-gray-600 p-3">Editors' Picks</a>
+            <div class="nav-links flex items-center space-x-4 ">
+                <div class="relative group border border-gray-300 rounded-full px-4 py-1">
+                    <a href="#" id="explore-link">Explore</a>
+                    <div class="absolute hidden group-hover:block bg-gray-800 text-gray-200 rounded-md mt-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Popular Images</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Categories</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">New Uploads</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-gray-700">Editors' Picks</a>
                     </div>
                 </div>
-                <a href="#" class="text-white border border-gray-300 rounded-full font-bold px-4 py-1 transition hover">Log in</a>
-                <a href="#" class="border border-gray-300 rounded-full font-bold px-4 py-1 transition hover:bg-gray-600">Join</a>
-                <a href="#" class="border border-gray-300 bg-green-500 text-white rounded-full px-4 py-2 transition hover:bg-green-600">Upload</a>
+                <a href="#" class="hover:text-gray-300 border border-gray-300 rounded-full px-4 py-1">Log in</a>
+                <a href="#" class="border border-gray-300 rounded-full px-4 py-1 hover:bg-gray-700 transition">Join</a>
+                <a href="#"
+                    class="bg-green-600 text-white rounded-full px-4 py-2 hover:bg-green-500 transition">Upload</a>
             </div>
         </header>
 
-        <div class="absolute inset-0 flex flex-col items-center justify-center z-20 text-center">
-            <h1 class="text-4xl"><strong>Stunning free stock photos for download</strong></h1>
-            <h2 class="text-lg">Over 3.9 million+ royalty-free stock photos shared by our talented community.</h2>
+        <!-- Background Image Text and Search Bar -->
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-white text-center z-10">
+            <h1 class="text-4xl font-bold"><strong>GIFs & stickers for download</strong></h1>
+            <h2 class="text-lg">Best GIFs & most popular animated stickers shared by our talented community</h2>
 
             <div class="mt-8 max-w-2xl w-full">
-                <form class="flex items-center bg-white rounded-full shadow-lg p-2" action="https://www.shutterstock.com" method="get">
-                    <svg class="w-5 h-5 fill-gray-500 mr-2 ml-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-                        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                <form class="flex items-center bg-white rounded-full shadow-lg p-2"
+                    action="https://www.shutterstock.com" method="get">
+                    <!-- Search Icon -->
+                    <svg class="w-5 h-5 fill-gray-500 mr-2 ml-4" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 512 512">
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                     </svg>
-                    <input type="search" name="search" placeholder="Search for photos" class="w-full text-black p-2 rounded-full border-none outline-none">
-                    <select name="category" class="border-none bg-transparent text-black font-bold cursor-pointer appearance-none p-2">
-                        <option value="photos">Photos</option>
-                        <option value="all">All Images</option>
-                        <option value="illustrations">Illustrations</option>
-                        <option value="vectors">Vectors</option>
-                        <option value="videos">Videos</option>
-                    </select>
+
+                    <!-- Search Input -->
+                    <input type="search" name="search" placeholder="Search for GIFs"
+                        class="w-full text-black p-2 rounded-full border-none outline-none">
+                        <select name="category"
+                            class="border-none outline-none bg-transparent text-black font-bold cursor-pointer">
+                            <option value="GIFs">GIFs</option>
+                            <option value="all">All Images</option>
+                            <option value="photos">Photos</option>
+                            <option value="illustrations">Illustrations</option>
+                            <option value="vectors">Vectors</option>
+                            <option value="videos">Videos</option>
+                            <option value="sound effects">Sound Effects</option>
+                        </select>
+                    </div>
                 </form>
                 <div class="absolute bottom-5 left-0 right-0 mx-auto flex text-gray-200 text-xs justify-between w-5/6">
                     <span>Read more about the <a href="https://pixabay.com/service/terms/" target="_blank" class="hover:text-gray-400 transition-all duration-100"><strong><u>Content License</u></strong></a></span>
-                    <span>Free image by <a href="https://pixabay.com/photos/mountain-sunset-forest-autumn-7559738/" target="_blank" class="hover:text-gray-400 transition-all duration-100"><strong><u>Ludo-Photos</u></strong></a></span>
+                    <span>Free image by <a href="https://pixabay.com/photos/mountain-sunset-forest-autumn-7559738/" target="_blank" class="hover:text-gray-400 transition-all duration-100"><strong><u>Prora</u></strong></a></span>
                 </div>
             </div>
         </div>
@@ -67,8 +80,8 @@
         <a href="index.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
             <i class="fa-solid fa-house text-slate-800"></i> Home
         </a>
-        <a href="" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
-            <i class="fa-solid fa-camera text-green-800"></i> Photos
+        <a href="photos.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
+            <i class="fa-solid fa-camera text-slate-800"></i> Photos
         </a>
         <a href="illustrations.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
             <i class="fa-solid fa-paintbrush text-slate-800"></i> Illustrations
@@ -85,11 +98,11 @@
         <a href="sound effects.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
             <i class="fa-solid fa-sliders text-slate-800"></i> Sound Effects
         </a>
-        <a href="gifs.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
-            <i class="fa-solid fa-fire-flame-curved text-slate-800"></i> GIFs
+        <a href="#" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100">
+            <i class="fa-solid fa-fire-flame-curved text-green-800"></i> GIFs
         </a>
     </div>
-    
+
     <div class="flex w-full text-sm justify-between pt-10 ml-4">
         <!-- Left section with right border -->
         <div class="flex w-4/5 justify-between space-x-1 pr-4 border-r border-gray-300">
@@ -133,6 +146,7 @@
             </a>
         </div>
     </div>
+
 </body>
 
 </html>

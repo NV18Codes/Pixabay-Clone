@@ -7,51 +7,54 @@
     <title>Pixabay Clone - Image Detail</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 
 <body class="bg-gray-200">
-    <section class="relative h-[70vh] text-white text-center overflow-hidden">
-        <div class="absolute inset-0 bg-cover bg-center filter brightness-50"
-            style="background-image: url('https://cdn.pixabay.com/index/2024/10/03/05-50-20-381_1440x550.jpg');"></div>
+    <!-- Background Section with Half Height -->
+    <section class="relative h-[70vh] flex flex-col items-center justify-center text-white text-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-cover bg-center filter brightness-50" style="background-image: url('https://cdn.pixabay.com/index/2024/10/03/05-50-20-381_1440x550.jpg');"></div>
+
+        <!-- Header -->
         <header class="absolute top-0 left-0 w-full flex items-center justify-between p-4 z-10">
             <div class="logo">
                 <h1 class="text-xl">pixabay</h1>
             </div>
             <div class="flex items-center space-x-4">
-                <div class="relative group">
-                    <button class="border border-gray-300 rounded-full font-bold px-4 py-1 transition hover:bg-gray-200">
-                        <span id="explore-link">Explore</span>
-                    </button>
-                    <div class="absolute hidden group-hover:block bg-gray-800 min-w-[180px] rounded-md z-10 mt-1">
+                <div class="relative dropdown border border-gray-300 rounded-full font-bold px-4 py-1 transition hover">
+                    <a href="#" id="explore-link">Explore</a>
+                    <div class="absolute hidden bg-gray-800 min-w-[180px] rounded-md z-10 mt-1 dropdown-content">
                         <a href="#" class="block text-gray-400 hover:bg-gray-600 px-4 py-2">Popular Images</a>
                         <a href="#" class="block text-gray-400 hover:bg-gray-600 px-4 py-2">Categories</a>
                         <a href="#" class="block text-gray-400 hover:bg-gray-600 px-4 py-2">New Uploads</a>
                         <a href="#" class="block text-gray-400 hover:bg-gray-600 px-4 py-2">Editors' Picks</a>
                     </div>
                 </div>
-            </div>
-            
-            </div>
-            
                 <a href="#" class="text-white border border-gray-300 rounded-full font-bold px-4 py-1 transition hover">Log in</a>
                 <a href="#" class="border border-gray-300 rounded-full font-bold px-4 py-1 transition hover:bg-gray-600">Join</a>
-                <a href="#" class="border border-gray-300 rounded-full font-bold px-4 py-1 transition hover bg-green-500 text-white rounded-full px-4 py-2 transition hover:bg-green-600">Upload</a>
+                <a href="#" class="border border-gray-300 bg-green-500 text-white rounded-full px-4 py-2 transition hover:bg-green-600">Upload</a>
             </div>
         </header>
 
-        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 w-full">
-            <h1 class="text-4xl"><strong>Stunning royalty-free images & royalty-free stock</strong></h1>
-            <h2 class="text-lg">Over 5 million+ high quality stock images, videos, and music shared by our talented community.</h2>
+        <!-- Centered Content -->
+        <div class="z-20 flex flex-col mx-auto justify-center w-full px-2">
+            <h1 class="text-4xl font-bold">Stunning royalty-free images & royalty-free stock</h1>
+            <h2 class="text-lg mt-2">Over 5 million+ high quality stock images, videos, and music shared by our talented community.</h2>
 
-            <div class="flex justify-center items-center max-w-xl mx-auto bg-white rounded-full shadow-lg p-2 mt-5">
-                <form class="flex w-full items-center" action="https://www.shutterstock.com" method="get">
+            <!-- Search Bar Container -->
+            <div class="mt-8 max-w-2xl w-full mx-auto">
+                <form class="flex items-center bg-white rounded-full shadow-lg p-2" action="https://www.shutterstock.com" method="get">
+                    <!-- Search Icon -->
                     <svg class="w-5 h-5 fill-gray-500 mr-2 ml-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                     </svg>
-                    <input type="search" name="search" placeholder="Search for all images on Pixabay"
-                        class="w-full text-black p-2 rounded-full border-none outline-none">
+
+                    <!-- Search Input -->
+                    <input type="search" name="search" placeholder="Search for all images on Pixabay" class="w-full text-black p-2 rounded-full border-none outline-none">
+
+                    <!-- Category Dropdown -->
                     <div class="relative ml-2">
                         <select name="category" class="bg-transparent text-black cursor-pointer font-bold appearance-none p-2">
                             <option value="all">All Images</option>
@@ -62,44 +65,70 @@
                         </select>
                     </div>
                 </form>
+
+                <!-- Links aligned to bottom left and right -->
+                <div class="absolute bottom-5 left-0 right-0 flex justify-between text-gray-200 text-xs mx-auto w-5/6">
+                    <span>Read more about the <a href="https://pixabay.com/service/terms/" target="_blank" class="hover:text-gray-400 transition-all duration-100"><strong><u>Content License</u></strong></a></span>
+                    <span>Free image by <a href="https://pixabay.com/photos/mountain-sunset-forest-autumn-7559738/" target="_blank" class="hover:text-gray-400 transition-all duration-100"><strong><u>yoshitaka2</u></strong></a></span>
+                </div>
+                
             </div>
         </div>
     </section>
 
-    <div class="flex justify-center items-center gap-5 p-5 bg-white shadow-lg">
-        <a href="C:\Users\navya\Desktop\website\picsbay\home.html" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="w-5 h-5 fill-green-500 mr-2">
-                <path
-                    d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z">
-                </path>
-            </svg>
-            <span>Home</span>
-        </a>
+    <!-- Navigation Links Section -->
+    <div class="flex w-4/5 text-m pt-10 justify-between mx-auto">
+        <a href="#" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-house text-green-800"></i> Home</a>
+        <a href="photos.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-camera text-slate-800"></i> Photos</a>
+        <a href="illustrations.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-paintbrush text-slate-800"></i> Illustrations</a>
+        <a href="Vectors.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-pen-nib text-slate-800"></i> Vectors</a>
+        <a href="video.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-video text-slate-800"></i> Videos</a>
+        <a href="music.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-music text-slate-800"></i> Music</a>
+        <a href="sound effects.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-sliders text-slate-800"></i> Sound Effects</a>
+        <a href="gifs.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-fire-flame-curved text-slate-800"></i> GIFs</a>
+    </div>
+    <div class="flex w-full text-sm justify-between pt-10 ml-4">
+        <!-- Left section with right border -->
+        <div class="flex w-4/5 justify-between space-x-1 pr-4 border-r border-gray-300">
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">background</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">wallpaper</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">flowers</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">women</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">landscape</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">people</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">money</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">travel</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">house</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">sea</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">autumn</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">iphone
+                wallpaper</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">halloween</a>
+            <a href="#"
+                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">fall</a>
+        </div>
 
-        <a href="/photos/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-camera menu-icon"></i>
-            <span><a href="photos.html">Photos</a></span>
-        </a>
-        <a href="/illustrations/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-paint-brush menu-icon"></i>
-            <span><a href="illustrations.html">Illustrations</a></span>
-        </a>
-        <a href="/vectors/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-vector-square menu-icon"></i>
-            <span><a href="Vectors.html">Vectors</a></span>
-        </a>
-        <a href="/videos/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-video menu-icon"></i>
-            <span>Videos</span>
-        </a>
-        <a href="/music/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-music menu-icon"></i>
-            <span><a href="video.html">Vectors</a></span>
-        </a>
-        <a href="/community/" class="flex items-center p-2 rounded-md hover:bg-gray-100">
-            <i class="fas fa-users menu-icon"></i>
-            <span>Community</span>
-        </a>
+        <!-- Right section without extra spacing -->
+        <div class="flex w-1/6 ml-2 items-center space-x-2">
+            <i class="fa-solid fa-gear text-lg mr-2"></i> <!-- Added margin-right for space -->
+            <a href="#"
+                class="rounded-full px-3 py-1 border-2 border-slate-500 hover:border-black transition-all duration-100 flex items-center">
+                Editor's choice <i class="fa-solid fa-chevron-down text-black text-xs ml-2"></i>
+            </a>
+        </div>
     </div>
 </body>
 
