@@ -10,13 +10,44 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM5cvv80qaPwaqe8fjbYsiVwP4QZNRB/76pfav7" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Smaller title size */
+            }
+
+            h2 {
+                font-size: 1rem; /* Smaller subtitle size */
+            }
+
+            .logo h1 {
+                font-size: 1.25rem; /* Smaller logo text */
+            }
+
+            .searchSuggestions {
+                flex-direction: column;
+                text-align: center; /* Center align suggestions on small screens */
+            }
+        }
+
+        @media (max-width: 640px) {
+            .dropdown-content {
+                min-width: 100%; /* Full width on small screens */
+            }
+
+            .flex {
+                flex-direction: column; /* Stack items vertically */
+                align-items: center; /* Center items */
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-gray-200">
     <section class="relative h-[70vh] flex flex-col items-center justify-center text-white text-center overflow-hidden">
         <div class="absolute inset-0 bg-cover bg-center filter brightness-50"
             style="background-image: url('https://cdn.pixabay.com/index/2023/04/18/04-44-42-402_1440x550.jpg');"></div>
-        <header class="absolute top-0 left-0 w-full flex items-center justify-between p-4 z-10">
+        <header class="absolute top-0 left-0 w-full flex items-center justify-between p-4 z-10 flex-wrap">
             <div class="logo">
                 <h1 class="text-xl">pixabay</h1>
             </div>
@@ -63,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="searchSuggestions--PY+0U mt-4">
+            <div class="searchSuggestions mt-4">
                 <div class="flex items-center justify-center underline gap-2">
                     <div><a href="/music/search/theme/music%20for%20videos/">Music for videos</a></div>,
                     <div><a href="/music/search/theme/music%20for%20youtube%20videos/">Music for youtube videos</a></div>,
@@ -77,56 +108,40 @@
         </div>
     </section>
 
-    <div class="flex w-4/5 text-m pt-10 justify-between mx-auto">
+    <div class="flex flex-col sm:flex-row w-4/5 text-m pt-10 justify-between mx-auto">
         <a href="index.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-house text-slate-800"></i> Home</a>
         <a href="photos.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-camera text-slate-800"></i> Photos</a>
         <a href="illustrations.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-paintbrush text-slate-800"></i> Illustrations</a>
-        <a href="Vectors.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-pen-nib text-slate-800"></i> Vectors</a>
+        <a href="vectors.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-pen-nib text-slate-800"></i> Vectors</a>
         <a href="video.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-video text-slate-800"></i> Videos</a>
-        <a href="" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-music text-green-800"></i> Music</a>
-        <a href="sound effects.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-sliders text-slate-800"></i> Sound Effects</a>
+        <a href="#" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-music text-green-800"></i> Music</a>
+        <a href="sound-effects.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-sliders text-slate-800"></i> Sound Effects</a>
         <a href="gifs.html" class="rounded-full px-4 py-2 hover:border-2 hover:bg-opacity-20 transition-all duration-100"><i class="fa-solid fa-fire-flame-curved text-slate-800"></i> GIFs</a>
     </div>
-   
-    <div class="flex w-full text-sm justify-between pt-10 ml-4">
+
+    <div class="flex flex-col w-full text-sm justify-between pt-10 ml-4">
         <!-- Left section with right border -->
-        <div class="flex w-4/5 justify-between space-x-1 pr-4 border-r border-gray-300">
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">background</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">wallpaper</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">flowers</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">women</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">landscape</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">people</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">money</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">travel</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">house</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">sea</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">autumn</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">iphone
-                wallpaper</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">halloween</a>
-            <a href="#"
-                class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">fall</a>
+        <div class="flex flex-wrap w-full justify-between space-x-1 pr-4 border-r border-gray-300">
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">background</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">wallpaper</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">flowers</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">women</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">landscape</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">people</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">money</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">travel</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">house</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">sea</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">autumn</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">iphone wallpaper</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">halloween</a>
+            <a href="#" class="rounded-lg px-2 py-1 border-2 border-stone-300 hover:border-black transition-all duration-100">fall</a>
         </div>
 
         <!-- Right section without extra spacing -->
-        <div class="flex w-1/6 ml-2 items-center space-x-2">
-            <i class="fa-solid fa-gear text-lg mr-2"></i> <!-- Added margin-right for space -->
-            <a href="#"
-                class="rounded-full px-3 py-1 border-2 border-slate-500 hover:border-black transition-all duration-100 flex items-center">
+        <div class="flex w-full sm:w-auto ml-2 items-center space-x-2 mt-2">
+            <i class="fa-solid fa-gear text-lg mr-2"></i>
+            <a href="#" class="rounded-full px-3 py-1 border-2 border-slate-500 hover:border-black transition-all duration-100 flex items-center">
                 Editor's choice <i class="fa-solid fa-chevron-down text-black text-xs ml-2"></i>
             </a>
         </div>
